@@ -38,5 +38,11 @@ def number_text(n):
     return "{} is a number".format(n)
 
 
+@app.route("/number_template/<int:n>")
+def number_template(n):
+    """Displays a HTML Page only if n is a integer"""
+    return render_template('5-number.html', n=n)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000')
