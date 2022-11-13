@@ -3,7 +3,6 @@
 Entry file for flask app
 """
 from flask import Flask
-from markupsafe import escape
 
 app = Flask(__name__)
 
@@ -18,13 +17,6 @@ def index():
 def hbnb():
     """returns HBNB"""
     return "HBNB"
-
-
-@app.route("/c/<text>")
-def c_text(text):
-    """Returns C + the specified text"""
-    text = text.replace("_", " ")
-    return f"C {escape(text)}"
 
 
 if __name__ == "__main__":
