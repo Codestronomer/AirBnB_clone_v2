@@ -20,7 +20,7 @@ def hbnb():
     return "HBNB"
 
 
-@app.route("/c/<text>")
+@app.route("/c/<text>", strict_slashes=False)
 def c_text(text):
     """Returns C + the specified text"""
     text = text.replace("_", " ")
