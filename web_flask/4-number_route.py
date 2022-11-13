@@ -2,7 +2,7 @@
 """
 Entry file for flask app
 """
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -36,6 +36,12 @@ def python_text(text="is cool"):
 def number_text(n):
     """Displays number followed by text"""
     return "{} is a number".format(n)
+
+
+@app.route("/number_template/<int:n>")
+def number_template(n):
+    """Displays a HTML Page only if n is a integer"""
+    return render_template('5-number.html', n=n)
 
 
 if __name__ == "__main__":
