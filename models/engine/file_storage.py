@@ -14,11 +14,11 @@ class FileStorage:
         # Only executed when a cls is passed
         # Will returned dictionary of objects with cls
         if cls is not None:
-            if len(FileStorage._objects) == 0:
+            if len(FileStorage.__objects) == 0:
                 return filtered_dict
             for key, value in self.__objects.items():
-                if isinstance(value, cls)
-                filtered_dict[key] = value
+                if isinstance(value, cls):
+                    filtered_dict[key] = value
                 return filtered_dict
         return FileStorage.__objects
 
