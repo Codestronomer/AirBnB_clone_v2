@@ -46,8 +46,8 @@ class DBStorage():
         if cls in classes:
             cls_objects = self.__session.query(classes[cls]).all()
             for co in cls_objects:
-                if '_sa_instance_state' in co.__dict__:
-                    co.__dict__.pop("_sa_instance_state")
+                # if '_sa_instance_state' in co.__dict__:
+                    # co.__dict__.pop("_sa_instance_state")
                 dicti = co.to_dict()
                 clss = dicti['__class__']
                 key = "{}.{}".format(clss, co.id)
@@ -56,8 +56,8 @@ class DBStorage():
         elif cls.__name__ in classes:
             cls_objects = self.__session.query(classes[cls.__name__]).all()
             for co in cls_objects:
-                if '_sa_instance_state' in co.__dict__:
-                    co.__dict__.pop("_sa_instance_state")
+                # if '_sa_instance_state' in co.__dict__:
+                    # co.__dict__.pop("_sa_instance_state")
                 dicti = co.to_dict()
                 clss = dicti['__class__']
                 key = "{}.{}".format(clss, co.id)
