@@ -9,9 +9,10 @@ place_amenities_table = Table(
     'place_amenity', Base.metadata,
     Column('place_id', String(60).with_variant(
         VARCHAR(60, charset='latin1'), "mysql"),
-        ForeignKey('places.id'), primary_key=True, nullable=False),
-    Column('amenity_id', String(60),
-           ForeignKey('amenities.id'), primary_key=True, nullable=False)
+            ForeignKey('places.id'), primary_key=True, nullable=False),
+    Column('amenity_id', String(60).with_variant(
+        VARCHAR(60, charset='latin1'), "mysql"),
+            ForeignKey('amenities.id'), primary_key=True, nullable=False)
 )
 
 
